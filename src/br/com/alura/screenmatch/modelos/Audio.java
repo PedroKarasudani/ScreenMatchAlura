@@ -7,7 +7,7 @@ public class Audio {
     private int totalDeReproducao;
     private int curtidas;
     private double classificacao;
-    private boolean reproduzir;
+    private boolean reproduz;
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
@@ -30,7 +30,7 @@ public class Audio {
     }
 
     public void curtir() {
-        this.curtidas += 1;
+        this.curtidas ++;
     }
 
     public int getCurtidas() {
@@ -45,9 +45,9 @@ public class Audio {
         return classificacao;
     }
 
-    public void reproduzir() {
-        this.reproduzir = true;
-        this.totalDeReproducao += 1;
+    public void reproduz() {
+        this.reproduz = true;
+        this.totalDeReproducao ++;
     }
 
 }
