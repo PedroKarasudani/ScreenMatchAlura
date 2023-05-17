@@ -4,11 +4,11 @@ public class Audio {
 
     private String titulo;
     private double duracao;
-    protected int totalDeReproducao;
+    private int totalDeReproducao;
     private int curtidas;
-    protected int classificacao;
+    private int classificacao;
     private boolean reproduz;
-    protected int totalDeAvaliacao;
+    private int totalDeAvaliacao;
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;

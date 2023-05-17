@@ -23,12 +23,14 @@ public class Podcast extends Audio {
 
     @Override
     public int getClasificacao() {
-        if (this.totalDeReproducao >= 500) {
+        if (this.getTotalDeReproducao() >= 500) {
             return 10;
-        } else if (this.totalDeReproducao >= 300) {
+        } else if (this.getTotalDeReproducao() >= 300) {
             return 8;
-        } else {
+        } else if (this.getTotalDeReproducao() >= 100) {
             return 4;
+        } else {
+            return 2;
         }
     }
 

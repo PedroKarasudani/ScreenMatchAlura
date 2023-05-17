@@ -18,6 +18,9 @@ public class MainAudio {
         meuPodcast.setTitulo(meuPodcast + "Java");
         meuPodcast.setApresentador(meuPodcast + "Paulo Silveira");
         meuPodcast.avalia(10);
+        for (int i = 0; i < 501; i++) {
+            meuPodcast.reproduz();
+        }
         System.out.println(meuPodcast + " Nota: " + meuPodcast.getClasificacao());
 
     }
