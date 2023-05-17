@@ -1,9 +1,9 @@
-
 package br.com.alura.screenmatch.modelos;
 
-public class Podcast extends Audio{
-        private String apresentador;
-        private String descricao;
+public class Podcast extends Audio {
+
+    private String apresentador;
+    private String descricao;
 
     public String getApresentador() {
         return apresentador;
@@ -20,6 +20,16 @@ public class Podcast extends Audio{
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-        
-        
+
+    @Override
+    public int getClasificacao() {
+        if (this.totalDeReproducao >= 500) {
+            return 10;
+        } else if (this.totalDeReproducao >= 300) {
+            return 8;
+        } else {
+            return 4;
+        }
+    }
+
 }

@@ -1,8 +1,7 @@
-
 package br.com.alura.screenmatch.modelos;
 
+public class Musica extends Audio {
 
-public class Musica extends Audio{
     private String album;
     private String cantor;
     private String genero;
@@ -30,6 +29,5 @@ public class Musica extends Audio{
     public void setGenero(String genero) {
         this.genero = genero;
     }
-    
-    
+
 }
