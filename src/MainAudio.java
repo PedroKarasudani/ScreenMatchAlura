@@ -1,6 +1,7 @@
 
 import br.com.alura.screenmatch.modelos.Musica;
 import br.com.alura.screenmatch.modelos.Podcast;
+import br.com.alura.screenmatch.modelos.MinhasPreferidas;
 
 public class MainAudio {
 
@@ -18,10 +19,14 @@ public class MainAudio {
         meuPodcast.setTitulo(meuPodcast + "Java");
         meuPodcast.setApresentador(meuPodcast + "Paulo Silveira");
         meuPodcast.avalia(10);
-        for (int i = 0; i < 501; i++) {
+        for (int i = 0; i < 10; i++) {
             meuPodcast.reproduz();
         }
         System.out.println(meuPodcast + " Nota: " + meuPodcast.getClasificacao());
+
+        MinhasPreferidas preferida = new MinhasPreferidas();
+        preferida.inclui(minhaMusica);
+        preferida.inclui(meuPodcast);
 
     }
 }
