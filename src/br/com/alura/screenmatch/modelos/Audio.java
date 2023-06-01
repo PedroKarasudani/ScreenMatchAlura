@@ -10,6 +10,10 @@ public class Audio {
     private boolean reproduz;
     private int totalDeAvaliacao;
 
+  
+
+    
+    
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
