@@ -1,3 +1,5 @@
+ 
+import java.util.ArrayList;
 
 import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
 import br.com.alura.screenmatch.calculos.FiltroRecomendacao;
@@ -9,6 +11,7 @@ public class Principal {
     public static void main(String[] args) {
         Filme primeiroFilme = new Filme();
         primeiroFilme.setNome("Veloses Furiosos");
+        primeiroFilme.setAnoDeLancamento(2000);
         primeiroFilme.setDiretor("Vin Diesel");
         primeiroFilme.setDuracaoEmMinutos(210);
         primeiroFilme.avalia(9);
@@ -39,6 +42,13 @@ public class Principal {
         
         FiltroRecomendacao filtro = new FiltroRecomendacao();
         filtro.filtra(primeiroFilme);
-    }
+
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(primeiroFilme);
+        listaDeFilmes.add(segundoFilme);
+        System.out.println("Quantidade de filmes: " + listaDeFilmes.size());
+        System.out.println(listaDeFilmes.get(0).toString());
+        System.out.println(listaDeFilmes);
+    }   
         
 }
