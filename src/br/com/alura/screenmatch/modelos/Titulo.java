@@ -9,17 +9,19 @@ public class Titulo {
     private int totalDeAvaliacoes;
     private int duracaoEmMinutos;
 
-    public void setNome(String nome) {
+    public Titulo(String nome, int ano){
         this.nome = nome;
+        this.anoDeLancamento = ano;
     }
 
-    public void setAnoDeLancamento(int anoDeLancamento) {
-        this.anoDeLancamento = anoDeLancamento;
-    }
+    // VARIAVEL NOME, ANODELANCAMENTO É IMUTAVEL AGORA, MAS E OBRIGADO A TER COM O CONSTRUTOR
+    // public void setNome(String nome) {
+    //     this.nome = nome;
+    // }
 
-    public void setIncluindoNoPlano(boolean incluindoNoPlano) {
-        this.incluindoNoPlano = incluindoNoPlano;
-    }
+    // public void setIncluindoNoPlano(boolean incluindoNoPlano) {
+    //     this.incluindoNoPlano = incluindoNoPlano;
+    // }
 
     public void setDuracaoEmMinutos(int duracaoEmMinutos) {
         this.duracaoEmMinutos = duracaoEmMinutos;
