@@ -1,3 +1,4 @@
+package br.com.alura.screenmatch.principal;
 
 import br.com.alura.screenmatch.modelos.Musica;
 import br.com.alura.screenmatch.modelos.Podcast;

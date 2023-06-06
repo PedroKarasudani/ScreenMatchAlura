@@ -62,6 +62,6 @@ public class Titulo {
     }
 
     public double pegaMedia() {
-        return this.totalDeAvaliacoes / this.somaDasAvaliacoes;
+        return  this.somaDasAvaliacoes / this.totalDeAvaliacoes;
     }
 }
