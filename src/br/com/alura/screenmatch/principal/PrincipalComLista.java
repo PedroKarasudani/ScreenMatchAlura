@@ -23,16 +23,14 @@ public class PrincipalComLista {
         System.out.println(lista.get(0));
         System.out.println(lista.get(1));
         System.out.println(lista.get(2));
-        //lista.forEach(nome -> System.out.println(nome)); //JAVA8 LAMBDA
-        //lista.forEach(System.out::println); //JAVA8 LAMBDA
+        // lista.forEach(nome -> System.out.println(nome)); //JAVA8 LAMBDA
+        // lista.forEach(System.out::println); //JAVA8 LAMBDA
         for (Titulo item : lista) {
             System.out.println(item.getNome());
-            Filme filme = (Filme) item;
-            System.out.println("Classificacao: " + filme.getClassificacao());
-            
+            if (item instanceof Filme) {
+                Filme filme = (Filme) item;
+                System.out.println("Classificacao: " + filme.getClassificacao());
+            }
         }
-
-
     }
-    
 }
