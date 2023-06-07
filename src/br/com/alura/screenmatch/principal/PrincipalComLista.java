@@ -1,6 +1,7 @@
 package br.com.alura.screenmatch.principal;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
@@ -20,17 +21,33 @@ public class PrincipalComLista {
         lista.add(primeiraSerie);
         primeiraSerie.avalia(8);
 
-        System.out.println(lista.get(0));
-        System.out.println(lista.get(1));
-        System.out.println(lista.get(2));
+        //System.out.println(lista.get(0));
+        //System.out.println(lista.get(1));
+        //System.out.println(lista.get(2));
         // lista.forEach(nome -> System.out.println(nome)); //JAVA8 LAMBDA
         // lista.forEach(System.out::println); //JAVA8 LAMBDA
+        lista.forEach(System.out::println);
         for (Titulo item : lista) {
             System.out.println(item.getNome());
             if (item instanceof Filme) {
                 Filme filme = (Filme) item;
                 System.out.println("Classificacao: " + filme.getClassificacao());
             }
+           
         }
+        ArrayList<String> buscaPorArtista = new ArrayList<>();
+        buscaPorArtista.add("Pedro");
+        buscaPorArtista.add("Barbara");
+        buscaPorArtista.add("Nami");
+        System.out.println("Artistas: ");
+        System.out.println(buscaPorArtista);
+        Collections.sort(buscaPorArtista);
+        System.out.println("Artista ordenados: ");
+        System.out.println(buscaPorArtista);
+
+        Collections.sort(lista);
+        System.out.println("Filmes ordenados: ");
+        System.out.println(lista);
+
     }
 }
