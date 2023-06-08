@@ -2,6 +2,7 @@ package br.com.alura.screenmatch.principal;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
@@ -45,9 +46,15 @@ public class PrincipalComLista {
         System.out.println("Artista ordenados: ");
         System.out.println(buscaPorArtista);
 
+
+        //para fazermos o collections.sort em lista precisamos implementar na Classe titulo,
+        //pois ele nao sabe em quem se referenciar, assinando um contrato e mostrando oque fazer
         Collections.sort(lista);
         System.out.println("Filmes ordenados: ");
         System.out.println(lista);
 
+        lista.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
+        System.out.println("Ordenando por ano: ");
+        System.out.println(lista);
     }
 }
