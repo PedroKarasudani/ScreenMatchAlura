@@ -35,9 +35,10 @@ public class PrincipalComBusca {
 
         Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
         TituloComIMDB tituloComIMDB = gson.fromJson(json, TituloComIMDB.class);
-        System.out.println(tituloComIMDB);
-        // Titulo meuTitulo = gson.fromJson(json, Titulo.class);
-        // System.out.println(meuTitulo);
+        // System.out.println(tituloComIMDB);
+
+        Titulo meuTitulo = new Titulo(tituloComIMDB);
+        System.out.println(meuTitulo);
 
     }
 
