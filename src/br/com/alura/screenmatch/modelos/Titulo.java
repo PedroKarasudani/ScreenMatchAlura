@@ -1,26 +1,30 @@
 package br.com.alura.screenmatch.modelos;
 
-public class Titulo implements Comparable<Titulo> {
+import com.google.gson.annotations.SerializedName;
 
+public class Titulo implements Comparable<Titulo> {
+    @SerializedName("Title")
     private String nome;
+    @SerializedName("Year")
     private int anoDeLancamento;
     private boolean incluindoNoPlano;
     private double somaDasAvaliacoes;
     private int totalDeAvaliacoes;
     private int duracaoEmMinutos;
 
-    public Titulo(String nome, int ano){
+    public Titulo(String nome, int ano) {
         this.nome = nome;
         this.anoDeLancamento = ano;
     }
 
-    // VARIAVEL NOME, ANODELANCAMENTO É IMUTAVEL AGORA, MAS E OBRIGADO A TER COM O CONSTRUTOR
+    // VARIAVEL NOME, ANODELANCAMENTO É IMUTAVEL AGORA, MAS E OBRIGADO A TER COM O
+    // CONSTRUTOR
     // public void setNome(String nome) {
-    //     this.nome = nome;
+    // this.nome = nome;
     // }
 
     // public void setIncluindoNoPlano(boolean incluindoNoPlano) {
-    //     this.incluindoNoPlano = incluindoNoPlano;
+    // this.incluindoNoPlano = incluindoNoPlano;
     // }
 
     public void setDuracaoEmMinutos(int duracaoEmMinutos) {
@@ -62,11 +66,17 @@ public class Titulo implements Comparable<Titulo> {
     }
 
     public double pegaMedia() {
-        return  this.somaDasAvaliacoes / this.totalDeAvaliacoes;
+        return this.somaDasAvaliacoes / this.totalDeAvaliacoes;
     }
 
     @Override
     public int compareTo(Titulo outroTitulo) {
         return this.getNome().compareTo(outroTitulo.getNome());
     }
+
+    @Override
+    public String toString() {
+        return "Titulo [nome=" + nome + ", anoDeLancamento=" + anoDeLancamento + "]";
+    }
+
 }
