@@ -37,8 +37,15 @@ public class PrincipalComBusca {
         TituloComIMDB tituloComIMDB = gson.fromJson(json, TituloComIMDB.class);
         // System.out.println(tituloComIMDB);
 
-        Titulo meuTitulo = new Titulo(tituloComIMDB);
-        System.out.println(meuTitulo);
+        try {
+            Titulo meuTitulo = new Titulo(tituloComIMDB);
+            System.out.println(meuTitulo);
+        } catch (NumberFormatException e) {
+            System.out.print("Deu um erro em: ");
+            System.out.println(e.getMessage());
+        } finally {
+            System.out.println("Finalizou");
+        }
 
     }
 
