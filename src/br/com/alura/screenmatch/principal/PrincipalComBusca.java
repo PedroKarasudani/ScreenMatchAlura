@@ -40,7 +40,7 @@ public class PrincipalComBusca {
         try {
             Titulo meuTitulo = new Titulo(tituloComIMDB);
             System.out.println(meuTitulo);
-        } catch (NumberFormatException e) {
+        } catch (NumberFormatException | NullPointerException e) {
             System.out.print("Deu um erro em: ");
             System.out.println(e.getMessage());
         } finally {
