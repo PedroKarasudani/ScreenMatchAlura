@@ -19,14 +19,12 @@ import com.google.gson.GsonBuilder;
 import br.com.alura.screenmatch.execao.ErroDeConversaoDeAnoException;
 import br.com.alura.screenmatch.modelos.Titulo;
 import br.com.alura.screenmatch.modelos.TituloComIMDB;
+import br.com.alura.screenmatch.pratico.ConsomeApi;
 
 public class PrincipalComBusca {
     public static void main(String[] args) throws IOException, InterruptedException {
         Scanner leitura = new Scanner(System.in);
-        String busca = "";
-        List<Titulo> titulos = new ArrayList<>();
-        Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).setPrettyPrinting()
-                .create();
+        String busca = ""; 
 
         while (!busca.equalsIgnoreCase("sair")) {
             try {
@@ -36,26 +34,9 @@ public class PrincipalComBusca {
                 if (busca.equalsIgnoreCase("sair")) {
                     break;
                 }
-
-                String endereco = "https://www.omdbapi.com/?t=" + busca.replace(" ", "+") + "&apikey=f94aab4b";
-
-                HttpClient client = HttpClient.newHttpClient();
-                HttpRequest request = HttpRequest.newBuilder()
-                        .uri(URI.create(endereco))
-                        .build();
-                HttpResponse<String> response = client
-                        .send(request, BodyHandlers.ofString());
-
-                String json = response.body();
-                // System.out.println(json);
-
-                TituloComIMDB tituloComIMDB = gson.fromJson(json, TituloComIMDB.class);
-
-                Titulo meuTitulo = new Titulo(tituloComIMDB);
-                System.out.println(meuTitulo);
-
-                titulos.add(meuTitulo);
-
+                ConsomeApi buscador = new ConsomeApi();
+                buscador.gerar(busca);
+                System.out.println(buscador);
             } catch (NumberFormatException e) {
                 System.out.print("Deu um erro em: ");
                 System.out.println(e.getMessage());
@@ -66,10 +47,10 @@ public class PrincipalComBusca {
                 System.out.println(e.getMessage());
             }
         }
-        System.out.println(titulos);
-        FileWriter escrita = new FileWriter("filmes.json");
-        escrita.write(gson.toJson(titulos));
-        escrita.close();
-        System.out.println("Finalizou!!");
+        // System.out.println(titulos);
+        // FileWriter escrita = new FileWriter("filmes.json");
+        // escrita.write(gson.toJson(titulos));
+        // escrita.close();
+        // System.out.println("Finalizou!!");
     }
 }
