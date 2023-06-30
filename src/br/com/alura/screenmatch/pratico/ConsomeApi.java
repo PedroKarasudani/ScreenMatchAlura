@@ -1,6 +1,5 @@
 package br.com.alura.screenmatch.pratico;
 
-import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -37,10 +36,13 @@ public class ConsomeApi {
     }
 
 
-    @Override
-    public String toString() {
-        return "ConsomeApi [titulos=" + titulos + "]";
+    public List<Titulo> receba(){
+        return titulos;
     }
+
+    
+
+
 
     
 }

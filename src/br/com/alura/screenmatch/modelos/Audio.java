@@ -7,7 +7,6 @@ public class Audio {
     private int totalDeReproducao;
     private int curtidas;
     private int classificacao;
-    private boolean reproduz;
     private int totalDeAvaliacao;
 
   
@@ -53,7 +52,6 @@ public class Audio {
     }
 
     public void reproduz() {
-        this.reproduz = true;
         this.totalDeReproducao++;
     }
 

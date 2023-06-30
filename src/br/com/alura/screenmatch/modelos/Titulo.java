@@ -1,6 +1,5 @@
 package br.com.alura.screenmatch.modelos;
 
-import com.google.gson.annotations.SerializedName;
 
 import br.com.alura.screenmatch.execao.ErroDeConversaoDeAnoException;
 
